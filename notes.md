@@ -59,3 +59,10 @@ mutually exclusive
 to get whisk around
 prematurely
 futz
+вимоги до коду
+correctness - чи код робить так як він повинен робити
+design - наскільки добре він написаний
+style - якість коду, щоб він був читабельним
+allude
+writ
+yesteryear
