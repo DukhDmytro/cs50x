@@ -1,4 +1,10 @@
 Data types
+why does C cares about data types?
+all information in computers stored in bites, 01000001 - can be 'A' or 65. tell the computer it is letter or int
+int (data type) balance (variable name) = (assignment operator) 20 (value to assign);
+create int named balance that gets value 20. - statement
+convey
+
 int - for variables to store integer 3 4 5 
 integers take up 4 bytes of memory (32 bits). -2^31 to 2^31
 unsigned int
@@ -30,6 +36,13 @@ String
 string is not built-in in C, but it is in cs50 library
 string data type used for variables to store series of characters like word, sentences.
 
+format codes
+%i - int
+%f - float %.9f - 9 float digits
+%c - char
+%s - string 
+
+
 Create a variable
 int number;
 char letter;
@@ -39,11 +52,13 @@ int numer; - variable declaration
 number = 17; - variable assignment
 int number = 17; - variable initialization, declaration and assignment at same time.
 
+int n = 1; create a variable called n that stores value 1
 
 Operators
 = assignment operator, allows to put a value into variable
 Arithmetic operators
 +, -, *, /
+/ - flor division. round down, even if result is closer to up
 int x = 2 + 2
 x = x * 5
 % modulus operator, which gives us the reminder when the number of the left of the operator is dividet by number on the right
@@ -185,6 +200,10 @@ the counter bariable is incremented
 the boolean expression is checked again
 etc.
 
+int i = 0 - initialization
+i < 10 - boolean expression
+i++ - incrementation
+
 use cases
 while  - you want to repeat a loop an unknown times or not at all
 do while - repeat loop an unknown times but at least once
@@ -217,3 +236,7 @@ directly writing constants into our code is referred as magic numbers, generally
 at the time program is compiled #define goes through code and replaces name with replacement
 #include similiar to copy/paste
 #define to find/replace
+
+
+first things first
+out of sight out of mind
