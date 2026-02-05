@@ -31,6 +31,7 @@ For now you can think of void as plaseholder for nothing, bur it more complex.
 Bool
 bool is not built-in in C, but it is in cs50 library
 bool can store 2 values true or false
+use 1 byte. Достатьно і 1 біт, але виявляється що 1 байт зручніше викорисотвувати, навіть якщо 7 біт не використовуються.
 
 String
 string is not built-in in C, but it is in cs50 library
@@ -240,3 +241,48 @@ at the time program is compiled #define goes through code and replaces name with
 
 first things first
 out of sight out of mind
+take for granted
+intercept
+commonplace
+crunching
+circutry
+deliberatly
+reminicent
+
+int h;
+h - garbage value, якесь випадкове значення яке було запичане в пам'яті раніше, і цю пам'ять виділили під змінну, але не присвоїли їй значення.
+
+source code -> compiler -> machine code
+make - program
+clang - compiler
+clang <source code.c> -> output will be a.out (asembler output)
+clang <source code.c> -lcs50 - compile code and link cs50 library -l - command line arugemnt <name.c> command line argument
+cland -o <name> <source code.c> -lcs50; -o - output name; same as make
+
+compiling consists of 4 separete processes:
+preprocessing
+    process #, if you use printf(), finds stdio.h and include printf code to your code
+compiling
+    convert preprocessed code and convert it to assembler code wich computer processor understand
+assembling
+    convert asembler code to machine code
+linking
+    combine machine code from libraries with macine code from source code
+
+type casting
+(float) 3 - make float 3.0 from 3
+1 float value in calculation of int cast result to int
+
+array is chunk of contiguous memory
+int scores[3]; - create array of 3 integer - chunk of memory to store 3 ints - 12 bytes of coniguous memory (4 bytes for each int)
+indexing 
+scores[0] = 72;
+scores[1] = 73;
+scores[2] = 33;
+values of array are contiguous 
+const int N = 3; - constant variable. convention to capitalize constant names
+float avg(int numbers[]) - pass array to function
+string - array of charecters
+\0 - 00000000 - 8 zero bits. \0 - NUL - end of the string
+
+string.h - library for strings. strlen function - get length of the string 
