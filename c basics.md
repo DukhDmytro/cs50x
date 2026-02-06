@@ -286,3 +286,77 @@ string - array of charecters
 \0 - 00000000 - 8 zero bits. \0 - NUL - end of the string
 
 string.h - library for strings. strlen function - get length of the string 
+cytype - provides many functions for classifying and modifying characters.
+math - many functions that allow you to perform mathematical tasks on numbers
+
+
+functions
+aka methods procedures subroutines
+частина програми, яка реалізує певний алгоритм і дозволяє звернення до неї з різних частин загальної (головної) програми
+функція може приймати декілька аргументів або жодного, та повертати якийсь результат
+не обов'язково знати як реалізоівана логіка у функції, достатьо знати які аргументи функція приймає і який результат повертає
+для чого використовують функції?
+1. організація: за допомогою функцій можна розділити складну задачу на декілька простіших задач, коли певна функція виконує певну частину більшої задачі
+2. спрощення: менші компоненти зручніше писати, дебагати. Наприклад є функція яка запитує вхідні данні у користувача, є функція яка їх оборбляє, є функція яка представляє результат, тому якщо буде якась проблема то не потібно дивитись і дебагати весь код, а певну його частину.
+3. повторне використання: код у функції потрібно написати 1 раз, а використовувати за потреби скільки завгодно раз. printf у с написана 1 раз, але використовується вже 40 років
+
+функція повинна мати зрозуміле і очевидне ім'я, щоб можна було зрозуміти поведінку функції з її ім'я
+
+function declaration
+<return type> <function name> (arguments)
+тип данних які повертає функція, її ім'я, набір агрументів які передаються до функції (потрібно зазначати їх тип данних і ім'я)
+int add_two_ints(int a, int b);
+для того щоб використовувати функцію в main потрібно її оголосити перед main, але це погана практика, бо ми хочемо відразу бачити що робить програма, а не допоміжні функції. Тому перед main вказуються прототипи функцій, які будуть оголошені піся main. Як обіцянка компілятору що ось буде така функція, ти її побачиш пізніше в коді
+
+function definition
+int add_two_ints(int a, int b)
+{
+    // realization of predictable behavoir
+    return a + b;
+}
+
+function call
+int sum = add_two_ints(5, 6); для того щоб виклакати функцію необхідно передати їй підходящі аргументи і присвоїти результат який вона повертає підходящому типу данних.
+miscellany
+іноді функції можуть не приймати аргументів і нічого не повертати
+void foo(void); - функція яка нічого не повертає і не приймає аргументів
+
+scope
+scope is caracteristic of varialbe that defines from wich function variable can be accessed
+local variables can be accessed within function in which it is created
+gloabal variable from any function in program
+
+float x = 0.5;
+
+int main(void)
+{
+// x is accesseble here and its value can be changed in main
+}
+int foo(void)
+{
+// x is accesseble here and its value can be changed in foo
+}
+local variables in c are **passed by value**
+when a variable are passed by value, the **callee (function that is receiving value)** resives the copy of the passed variable and not variable itself
+the variable in **caller** is unchanged unless overwritten
+
+
+**array**
+array is data structure used to hold value of same type contiguous in memory
+array - block of cotniguous memory partitioned into same size blocks of memory called elements, each of elements can store sertein amount of data (all elements same data type int char ...). Each element can be accessed by index. Indexes start from a zero, last element of array size N has N-1 index. C will not prevent you to access index out of array, code will compile but you get unexpected behavoir or segmentation fault becouse access to memory out of array.
+
+array declaration 
+data type name[size];
+int numbers[5] - array of 5 integers, indexes 0 1 2  3 4
+int numbers[3] = { 1, 2, 3 } or numbers[0] = 1; numbers [1] = 2; numbers[2] = 3; or int numbers[] = { 1, 2, 3 }
+int grid[10][10]; - two dimencinal array
+each element of array can be treated as variable, but whole array can not be treated as variable
+for example you can not assign one array to other to copy array, you need to loop through aray to copy it
+in c arrays are passed by reference. Calle gets array itself but not the copy of array
+
+command-line arguments
+it is way to pass data to your porgram at running the program
+int main(int argc, string argv[]) - collect data from user - argc (argument count) and argv (argrument vector) - what and how much data user provided during running the program
+names of argument are conventional names, you can call it whatever you want but this is convention
+./greedy 1024 cs50 - argc will be 3, 0 is always program name 1 - 1024, 2 0 cs50. program name counts itself as command-line argument. arguments divided by space
+argv - array of strings, each element per string. first elemen index is 0, last argc - 1
