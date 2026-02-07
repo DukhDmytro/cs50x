@@ -360,3 +360,9 @@ int main(int argc, string argv[]) - collect data from user - argc (argument coun
 names of argument are conventional names, you can call it whatever you want but this is convention
 ./greedy 1024 cs50 - argc will be 3, 0 is always program name 1 - 1024, 2 0 cs50. program name counts itself as command-line argument. arguments divided by space
 argv - array of strings, each element per string. first elemen index is 0, last argc - 1
+
+
+design
+avoid redundand operations and repetitions of code, use functions to abstract and avoid
+code easy to read easy to maintain
+avoid magic numbers - use constatns
